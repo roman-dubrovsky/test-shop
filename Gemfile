@@ -11,6 +11,8 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise-bootstrap-views'
+gem 'cells', "~> 4.0.0"
+gem 'cells-slim'
 
 group :development, :test do
   gem 'pry-byebug'
