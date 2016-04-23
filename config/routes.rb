@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :products, only: [:show] do
     resource :cart, only: [:create, :destroy]
   end
+  resources :orders, only: [:create, :show, :new]
 
   namespace :admin do
     root 'base#root'

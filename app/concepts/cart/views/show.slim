@@ -8,3 +8,7 @@
       ' Total:
 
       = total_price
+
+  - if cart.present?
+    .panel-footer
+      = link_to "Create order", new_order_path, class: "btn btn-primary"
