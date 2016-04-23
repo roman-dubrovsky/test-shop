@@ -6,4 +6,5 @@ class Admin::Products::Item::Cell < Application::Cell
   private
 
     property :title, :price, :id
+    date_property :created_at, :updated_at
 end

@@ -1,0 +1,20 @@
+tr
+  th
+    = id
+
+  td
+    = title
+
+  td
+    = products_count
+
+  td
+    = created_at
+
+  td
+    = updated_at
+
+  td style="text-align: right;"
+    = link_to "Edit", edit_admin_product_kind_path(model), class: "btn btn-success btn-xs"
+
+    = link_to "Delete", admin_product_kind_path(model), method: :delete, class: "btn btn-danger btn-xs"

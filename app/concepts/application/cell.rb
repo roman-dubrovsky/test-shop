@@ -21,4 +21,16 @@ class Application::Cell < Cell::Concept
   def render_each_and_join(views)
     views.inject('') { |partials, view| partials << render("partials/#{view}") }
   end
+
+  def self.date_property(*array)
+    array.each do |prop|
+      define_method(prop) do
+        I18n.l model.public_send(prop), format: :short
+      end
+    end
+  end
+
+  def pagination
+    will_paginate(model, renderer: BootstrapPagination::Rails)
+  end
 end
