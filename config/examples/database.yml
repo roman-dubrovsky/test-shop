@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: kursach-shop_development
+
+test:
+  <<: *default
+  database: kursach-shop_test
+
+production:
+  <<: *default
+  database: kursach-shop_production
