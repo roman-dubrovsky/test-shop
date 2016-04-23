@@ -7,8 +7,10 @@
       = menu
 
     ul.nav.navbar-nav.navbar-right
-      li class=is_active?(edit_user_password_path)
-        = link_to current_user.email, edit_user_password_path
+      - if current_user.present?
+        = render 'roles_panel'
 
-      li
-        = link_to "Log Out", destroy_user_session_path, method: :delete
+        = render 'user_panel'
+
+      - else
+        = render 'guest_panel'
