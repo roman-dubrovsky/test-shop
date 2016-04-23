@@ -2,4 +2,9 @@
   .panel-heading Cart
 
   .panel-body
-    h4 Total: 0
+    = concept("cart/item/cell", collection: items)
+
+    h4
+      ' Total:
+
+      = total_price

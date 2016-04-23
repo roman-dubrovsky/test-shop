@@ -36,6 +36,6 @@ class Application::Cell < Cell::Concept
   end
 
   def cart
-    concept("cart/cell", session[:cart])
+    concept("cart/cell")
   end
 end
