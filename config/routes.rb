@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :products, only: [:show]
+
+  namespace :admin do
+    root 'base#root'
+    resources :products, except: [:show]
+  end
 end

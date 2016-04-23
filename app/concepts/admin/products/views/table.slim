@@ -1,0 +1,10 @@
+table.table.table-condensed.table-striped
+  thead
+    tr
+      th ID
+      th Title
+      th Price
+      th style="text-align: right;" Action
+
+  tbody
+    = concept("admin/products/item/cell", collection: model)

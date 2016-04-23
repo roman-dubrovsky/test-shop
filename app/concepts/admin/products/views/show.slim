@@ -1,0 +1,7 @@
+h1 Products
+
+= link_to "Add new product", new_admin_product_path, class: "btn btn-success btn-lg"
+
+= render 'table'
+
+= will_paginate model, renderer: BootstrapPagination::Rails

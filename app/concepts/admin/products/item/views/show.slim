@@ -1,0 +1,14 @@
+tr
+  th
+    = id
+
+  td
+    = title
+
+  td
+    = price
+
+  td style="text-align: right;"
+    = link_to "Edit", edit_admin_product_path(model), class: "btn btn-success btn-xs"
+
+    = link_to "Delete", admin_product_path(model), method: :delete, class: "btn btn-danger btn-xs"
