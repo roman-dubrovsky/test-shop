@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @orders = orders_scope
   end
 
   def new
@@ -40,5 +41,9 @@ class OrdersController < ApplicationController
         @order.items.create product: item, count: count, price: price
       end
       session[:cart] = nil
+    end
+
+    def orders_scope
+      Order.where(user: current_user).order(id: :desc)
     end
 end
