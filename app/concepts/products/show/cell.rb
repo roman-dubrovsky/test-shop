@@ -5,5 +5,6 @@ class Products::Show::Cell < Application::Cell
 
   private
 
-    property :title
+    property :title, :description, :image, :price, :kind
+    delegate :title, to: :kind, prefix: true
 end

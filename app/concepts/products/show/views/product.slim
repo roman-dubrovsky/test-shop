@@ -1,0 +1,26 @@
+.row
+  .col-sm-4
+    = image_tag image.url
+
+  .col-sm-8
+    b Title
+
+    p
+      = title
+
+    b Kind
+
+    p
+      = kind_title
+
+    b Price
+
+    p
+      = price
+
+.row
+  .col-sm-9
+    = description
+
+  .col-sm-3
+    = link_to "To cart", "", class: "btn btn-info btn-lg"
