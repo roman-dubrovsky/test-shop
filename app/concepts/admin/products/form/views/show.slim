@@ -3,8 +3,12 @@ h1 Product editing
 = simple_form_for [:admin, model], wrapper: :horizontal_form, html: {class: "form-horizontal"} do |f|
   = f.input :title
 
+  = f.association :kind
+
   = f.input :price
 
   = f.input :description
+
+  = f.input :image
 
   = f.submit "Save", class: "btn btn-success btn-lg"
