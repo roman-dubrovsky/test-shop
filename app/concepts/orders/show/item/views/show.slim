@@ -1,0 +1,18 @@
+.panel.panel-default
+  .pabel-body
+    .row
+      .col-sm-3
+        = image_tag product_image.url
+
+      .col-sm-9
+        = link_to product_title, product_path(product)
+
+        p
+          b Count
+
+          = count
+
+        p
+          b Price
+
+          = price

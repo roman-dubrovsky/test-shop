@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
 
+  helper_method :order
+
   def index
     @orders = orders_scope
   end
@@ -24,6 +26,10 @@ class OrdersController < ApplicationController
   end
 
   private
+
+    def order
+      @_order ||= orders_scope.find(params[:id])
+    end
 
     def orders_params
       params.require(:order).permit(:phone, :address, :name)
