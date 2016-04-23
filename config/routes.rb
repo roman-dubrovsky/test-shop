@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :products, only: [:show] do
-    resource :cart, only: :create
+    resource :cart, only: [:create, :destroy]
   end
 
   namespace :admin do

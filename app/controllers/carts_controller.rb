@@ -1,6 +1,5 @@
 class CartsController < ApplicationController
   def create
-    product = Product.find(params[:product_id])
     count = params[:cart][:count].to_i
 
     cart = session[:cart]
@@ -11,6 +10,22 @@ class CartsController < ApplicationController
       session[:cart] = {product.id => count}
     end
 
-    redirect_to root_path
+    redirect_to :back
   end
+
+  def destroy
+    cart = session[:cart]
+    if cart.present?
+      cart[product.id.to_s] = nil
+      session[:cart].compact!
+    end
+
+    redirect_to :back
+  end
+
+  private
+
+    def product
+      @_product ||= Product.find(params[:product_id])
+    end
 end

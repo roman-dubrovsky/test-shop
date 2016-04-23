@@ -1,5 +1,5 @@
 h4
-  = title
+  = link_to title, product_path(model)
 
 p
   b
@@ -12,5 +12,7 @@ p
    ' Total price:
 
   = total_price
+
+= link_to "delete from cart", product_cart_path(model), method: :delete
 
 hr
