@@ -1,5 +1,10 @@
 h1 Список товаров
 
-= concept("products/item/cell", collection: model)
+.row
+  .col-sm-3
+    = filter
 
-= pagination
+  .col-sm-9
+    = concept("products/item/cell", collection: model)
+
+    = pagination

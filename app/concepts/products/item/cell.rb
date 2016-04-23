@@ -5,5 +5,5 @@ class Products::Item::Cell < Application::Cell
 
   private
 
-    property :title
+    property :title, :price, :image
 end

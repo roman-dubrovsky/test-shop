@@ -6,7 +6,7 @@ class Products::Cell < Application::Cell
   private
 
     def filter_url
-      products_path
+      root_path
     end
 
     def filter

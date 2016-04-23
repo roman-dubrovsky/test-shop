@@ -1,3 +1,17 @@
 .panel.panel-default
   .panel-body
-    = link_to title, product_path(model)
+    .row
+      .col-sm-2
+        = image_tag image.url
+
+      .col-sm-10
+        h4
+          = title
+
+        p
+          b Price
+
+          = price
+
+        p
+          = link_to 'show', product_path(model)
