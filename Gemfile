@@ -9,6 +9,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 
 gem 'devise'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'devise-bootstrap-views'
 
 group :development, :test do
   gem 'pry-byebug'
