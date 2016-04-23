@@ -13,6 +13,12 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise-bootstrap-views'
 gem 'cells', "~> 4.0.0"
 gem 'cells-slim'
+gem 'simple_form'
+gem 'will_paginate', '~> 3.1.0'
+gem 'enumerize'
+gem 'ransack'
+gem 'will_paginate-bootstrap' # <%= will_paginate @collection, renderer: BootstrapPagination::Sinatra %>
+gem 'carrierwave'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -22,4 +28,3 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-
