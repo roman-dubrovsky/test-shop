@@ -4,7 +4,10 @@ h1 Список товаров
   .col-sm-3
     = filter
 
-  .col-sm-9
+  .col-sm-6
     = concept("products/item/cell", collection: model)
 
     = pagination
+
+  .col-sm-3
+    = cart

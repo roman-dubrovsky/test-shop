@@ -34,4 +34,8 @@ class Application::Cell < Cell::Concept
   def pagination
     will_paginate(model, renderer: BootstrapPagination::Rails)
   end
+
+  def cart
+    concept("cart/cell", session[:cart])
+  end
 end
