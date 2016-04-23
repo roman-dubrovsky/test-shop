@@ -2,6 +2,11 @@ h1 Products
 
 = link_to "Add new product", new_admin_product_path, class: "btn btn-success btn-lg"
 
-= render 'table'
+.row
+  .col-sm-9
+    = render 'table'
 
-= pagination
+    = pagination
+
+  .col-sm-3
+    = filter

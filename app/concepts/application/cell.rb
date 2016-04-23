@@ -17,6 +17,7 @@ class Application::Cell < Cell::Concept
 
   include AbstractController::Helpers
   include Devise::Controllers::Helpers
+  include Ransack::Helpers::FormHelper
 
   def render_each_and_join(views)
     views.inject('') { |partials, view| partials << render("partials/#{view}") }

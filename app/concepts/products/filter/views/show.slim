@@ -1,0 +1,28 @@
+.panel.panel-default
+  .panel-heading Product filter
+
+  .panel-body
+    = search_form_for model, url: url, html: {class: "form-vertical"} do |f|
+      .form-group
+        = f.label "Search", class: "control-label"
+
+        = f.search_field :title_cont, class: "form-control"
+
+      .form-group
+        = f.label "Price from", class: "control-label"
+
+        = f.search_field :price_gteq, class: "form-control"
+
+        = f.label "to", class: "control-label"
+
+        = f.search_field :price_lteq, class: "form-control"
+
+      .form-group
+        = f.label "Price from", class: "control-label"
+
+        = f.select :kind_id_eq, options_for_kind, {include_blank: true}, {class: "form-control"}
+
+      .form-group.btn-group.btn-group-sm
+        = f.submit "Search", class: "btn btn-success"
+
+        = link_to "Clear", url, class: "btn btn-warning"

@@ -4,7 +4,8 @@ class Admin::ProductsController < Admin::BaseController
   before_action :set_product, only: [:create, :new]
 
   def index
-    @products = Product.order(id: :desc).paginate(page: params[:page], per_page: 20)
+    @search = Product.ransack(filter_params)
+    @products = @search.result.order(id: :desc).paginate(page: params[:page], per_page: 20)
   end
 
   def new
@@ -41,6 +42,10 @@ class Admin::ProductsController < Admin::BaseController
 
     def product_params
       params.require(:product).permit(:title, :price, :description, :kind_id, :image)
+    end
+
+    def filter_params
+      params[:q]
     end
 
     def product
