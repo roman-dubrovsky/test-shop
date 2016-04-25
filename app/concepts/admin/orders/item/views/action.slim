@@ -1,0 +1,4 @@
+= simple_form_for [:admin, model] do |f|
+  = f.input :state, as: :hidden, input_html: {value: update_action_value}
+
+  = f.submit update_action_title, class: "btn btn-xs #{update_action_class}"

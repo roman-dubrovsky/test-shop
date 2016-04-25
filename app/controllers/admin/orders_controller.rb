@@ -8,6 +8,11 @@ class Admin::OrdersController < Admin::BaseController
   def show
   end
 
+  def update
+    order.update(orders_params)
+    redirect_to :back
+  end
+
   private
 
     def order
@@ -15,6 +20,6 @@ class Admin::OrdersController < Admin::BaseController
     end
 
     def orders_params
-      params.require(:order).permit(:phone, :address, :name)
+      params.require(:order).permit(:state)
     end
 end

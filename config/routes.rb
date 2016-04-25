@@ -12,6 +12,6 @@ Rails.application.routes.draw do
 
     resources :products, except: [:show]
     resources :product_kinds, except: [:show]
-    resources :orders, only: [:index, :show]
+    resources :orders, only: [:index, :show, :update]
   end
 end
