@@ -5,7 +5,7 @@ class Admin::BaseController < ApplicationController
   layout 'admin'
 
   def root
-    redirect_to admin_products_path
+    redirect_to admin_orders_path
   end
 
   private

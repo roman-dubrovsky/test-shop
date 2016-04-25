@@ -1,0 +1,18 @@
+tr
+  th
+    = link_to id, admin_order_path(model)
+
+  td
+    = user_email
+
+  td
+    = render_order_state
+
+  td
+    = total_price
+
+  td
+    = created_at
+
+  td
+    = updated_at

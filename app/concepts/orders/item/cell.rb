@@ -5,7 +5,7 @@ class Orders::Item::Cell < Application::Cell
 
   private
 
-    property :id, :state
+    property :id, :state, :total_price
     date_property :created_at
 
     def render_order_state

@@ -2,9 +2,11 @@ table.table.table-condensed.table-striped
   thead
     tr
       th ID
+      th User
       th State
       th Price
       th Created
+      th Updated
 
   tbody
-    = concept("orders/item/cell", collection: model)
+    = concept("admin/orders/item/cell", collection: model)

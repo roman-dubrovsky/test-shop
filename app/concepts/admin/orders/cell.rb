@@ -1,4 +1,4 @@
-class Orders::Cell < Application::Cell
+class Admin::Orders::Cell < Orders::Cell
   def show
     render
   end
@@ -6,6 +6,6 @@ class Orders::Cell < Application::Cell
   private
 
     def title
-      "My orders"
+      "Orders"
     end
 end
