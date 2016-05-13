@@ -12,5 +12,9 @@ html
   body
     = concept("navigation/cell").()
 
+    - if flash[:alert].present?
+      p
+        = flash[:alert]
+
     .container-fluid
       == yield

@@ -19,6 +19,7 @@ gem 'enumerize'
 gem 'ransack'
 gem 'will_paginate-bootstrap' # <%= will_paginate @collection, renderer: BootstrapPagination::Sinatra %>
 gem 'carrierwave'
+gem 'phony_rails'
 
 group :development, :test do
   gem 'pry-byebug'

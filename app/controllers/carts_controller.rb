@@ -1,6 +1,10 @@
 class CartsController < ApplicationController
   def create
     count = params[:cart][:count].to_i
+    unless count > 0
+      redirect_to :back, alert: 'Хуйня количество'
+      return
+    end
 
     cart = session[:cart]
     if cart.present?

@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:index, :show]
 
   helper_method :order
 
@@ -13,8 +13,10 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(orders_params)
-    @order.user = current_user
-    if cart.present? && @order.save
+    if cart.present? && @order.valid?
+      create_user_if_empty!
+      @order.user = current_user
+      @order.save
       create_cart
       redirect_to order_path(@order)
     else
@@ -51,5 +53,16 @@ class OrdersController < ApplicationController
 
     def orders_scope
       Order.where(user: current_user).order(id: :desc)
+    end
+
+    def create_user_if_empty!
+      if current_user.nil?
+        user = User.new
+        user.save(validate: false)
+        user.email = "user#{user.id}@example.com"
+        user.password = Devise.friendly_token(8)
+        user.save
+        sign_in(user)
+      end
     end
 end
