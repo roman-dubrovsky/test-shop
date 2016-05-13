@@ -8,6 +8,7 @@ class Order < ActiveRecord::Base
   has_many :items, dependent: :destroy
 
   validates_presence_of :state, :phone, :address, :name
+  validates_plausible_phone :phone, country_code: 'BY'
 
   def total_price
     items.map(&:price).sum
